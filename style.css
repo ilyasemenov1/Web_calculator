@@ -4,138 +4,101 @@
     box-sizing: border-box;
 }
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(circle, rgba(255,226,189,1) 0%, rgba(255,203,189,1) 92%);
+  height: 100vh;
 }
 .calc-color {
   color: #696565;
-  box-shadow: 0px 0px 13px rgba(0, 0, 0, .1);
-  background: #ffffff;
   box-sizing: border-box;
 }
 .calc {
   display: flex;
   flex-direction: column;
+  background: #ffffff94;
   padding: 35px;
   min-width: 190px;
-  max-width: 450px;
+  max-width: 430px;
   border: none;
+  border-radius: 25px;
   transition: .2s;
 }
 .calc__output {
+  background: none;
   padding: 10px;
-  height: 125px;
-  border: 2px solid #5f57551c;
-  outline: 5px solid #5f575500;
-  text-align: left;
+  height: 170px;
+  border: none;
+  border-bottom: 1px solid #5f57551c;
+  outline: none;
   font-size: 40px;
   font-family: 'Arial';
   resize: none;
   transition: .2s ease;
 }
-
-.calc__output:hover {
-  outline: 2px solid #5f575526;
-  border: 2px solid #5f575531
-}
 .calc__output::-webkit-scrollbar-track{
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border: none;
   border-radius: 100px;
 }
- 
 .calc__output::-webkit-scrollbar{
   width: 8px;
-  background-color: #ffffff;
+  background-color: #ffffff00;
   border-radius: 100px;
 }
 
 .calc__output::-webkit-scrollbar-thumb{
   border-radius: 100px;
-  background:  #a1a1a18f;
+  background:  #a5a5a55b;
  }
 
 .calc__output::-webkit-scrollbar-thumb:hover {
-  background:  #a1a1a1bb;
-}
-.calc__output:focus {
-  outline: 2px solid #5f575526;
-  border: 2px solid #5f575531;
+  background:  #a5a5a577;
 }
 .buttonarea {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
-    grid-column-gap: 28px;
-    grid-row-gap: 22px;
-    margin-top: 30px;
 }
 .buttonarea>button {
-    border: 2px solid #5f57551c;
-    outline: 5px solid #5f575500;
-    text-align: center;
-    min-height: 70px;
-    font-size: 25px;
-    font-family: 'Arial';
-    transition: .2s ease;
+  background: none;
+  box-shadow: none;
+  border: none;
+  text-align: center;
+  min-width: 70px;
+  min-height: 90px;
+  font-size: 25px;
+  font-family: 'Arial';
+  transition: .2s ease;
 }
 .buttonarea>button:hover {
   cursor: pointer;
-  outline: 2px solid #5f575526;
-  border: 2px solid #5f575531;
+  background: #ffffff70;
+  box-shadow: 0px 3px 25px #00000025;
 }
 .buttonarea>button:focus {
-  outline: 2px solid #5f575526;
-  border: 2px solid #5f575531;
+  background: #ffffff70;
+  box-shadow: 0px 3px 25px #00000025;
 }
-@media(max-width: 450px) {
-  .buttonarea {
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-}
+@media(max-width: 430px) {
   .calc {
     display: grid;
     grid-template-rows: .5fr 1fr;
     height: inherit;
     padding: 0px;
-  }
-  .buttonarea{
-    margin-top: 0px;
+    border-radius: 0px;
   }
   .buttonarea>button {
-    border: 1px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
-    outline: 0px solid #5f575500;
     min-height: 50px;
     font-size: 35px;
   }
-  .buttonarea>button:hover {
-    border: 1px solid #5f57551c;
-    outline: 0px solid #5f575500;
-    background: #ebebeb5e;
-}
-  .buttonarea>button:focus {
-    border: 1px solid #5f57551c;
-    outline: 0px solid #5f575500;
-    background: #ebebeb5e;
-}
   .calc__output {
     height: auto;
-    box-shadow: none;
-    border: 1px solid #5f57551c;
-    outline: 0px solid #5f575500;
     font-size: 55px;
   }
-  .calc__output:hover {
-    border: 1px solid #5f57553b;
-  }
-  .calc__output:focus {
-    border: 1px solid #5f57553b;
-  }
 }
-@media(min-height: 850px) and (max-width: 450px) {
+@media(min-height: 850px) and (max-width: 430px) {
   .calc {
     grid-template-rows: .6fr 1fr;
   }
@@ -143,7 +106,7 @@ body {
     font-size: 60px;
   }
 }
-@media(max-height: 660px) and (max-width: 450px) {
+@media(max-height: 660px) and (max-width: 430px) {
   .calc {
     grid-template-rows: .4fr 1fr;
   }

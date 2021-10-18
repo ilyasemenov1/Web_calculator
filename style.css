@@ -3,90 +3,68 @@
     padding: 0;
     box-sizing: border-box;
 }
-  
-  body {
-    height: 100%;
-    width: 100%;
-    background: rgb(255, 255, 255);
-    padding: 15px;
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+}
+.calc-color {
+  color: #696565;
+  box-shadow: 0px 0px 13px rgba(0, 0, 0, .1);
+  background: #ffffff;
+  box-sizing: border-box;
+}
+.calc {
+  display: flex;
+  flex-direction: column;
+  padding: 35px;
+  min-width: 190px;
+  max-width: 450px;
+  border: none;
+  transition: .2s;
+}
+.calc__output {
+  padding: 10px;
+  height: 125px;
+  border: 2px solid #5f57551c;
+  outline: 5px solid #5f575500;
+  text-align: left;
+  font-size: 40px;
+  font-family: 'Arial';
+  resize: none;
+  transition: .2s ease;
 }
 
-  .main-contenier {
-    box-sizing: border-box;
-    position: absolute;               
-    top: 50%;                         
-    transform: translate(0, -50%);
-    height: auto;
-    min-height: 700px;
+.calc__output:hover {
+  outline: 2px solid #5f575526;
+  border: 2px solid #5f575531
 }
-  .calc {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: min-content 1fr;
-    background: rgba(255, 255, 255, 1);
-    box-sizing: border-box;
-    padding: 35px;
-    width: auto;
-    min-width: 190px;
-    max-width: 450px;
-    border: none;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, .1);
-    transition: .2s;
-    
-}
-  .calc__output {
-    color: #696565;
-    background: #ffffff;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, .1);
-    box-sizing: border-box;
-    padding: 10px;
-    width: auto;
-    height: 125px;
-    border: 2px solid #5f57551c;
-    outline: 5px solid #5f575500;
-    text-align: left;
-    font-size: 40px;
-    font-family: 'Arial';
-    resize: none;
-    transition: .2s ease;
-}
-
-  .calc__output:hover {
-    color: #696565;
-    background: #ffffff;
-    outline: 2px solid #5f575526;
-    border: 2px solid #5f575531
-}
-  .calc__output::-webkit-scrollbar-track{
-    background-color: white;
-    border: none;
-    border-radius: 100px;
+.calc__output::-webkit-scrollbar-track{
+  background-color: #ffffff;
+  border: none;
+  border-radius: 100px;
 }
  
-  .calc__output::-webkit-scrollbar{
-    width: 8px;
-    background-color: #ffffff;
-    border-radius: 100px;
+.calc__output::-webkit-scrollbar{
+  width: 8px;
+  background-color: #ffffff;
+  border-radius: 100px;
 }
 
-  .calc__output::-webkit-scrollbar-thumb{
-    border-radius: 100px;
-    background:  #a1a1a1bb;
+.calc__output::-webkit-scrollbar-thumb{
+  border-radius: 100px;
+  background:  #a1a1a18f;
  }
 
-  .cacl__output::-webkit-scrollbar-thumb:hover {
-    background:  #909090bb;
+.calc__output::-webkit-scrollbar-thumb:hover {
+  background:  #a1a1a1bb;
 }
-  .cacl__output:focus {
-    color: #696565;
-    background: #ffffff;
-    outline: 2px solid #5f575526;
-    border: 2px solid #5f575531;
+.calc__output:focus {
+  outline: 2px solid #5f575526;
+  border: 2px solid #5f575531;
 }
-  .buttonarea {
+.buttonarea {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
@@ -94,39 +72,23 @@
     grid-row-gap: 22px;
     margin-top: 30px;
 }
-  .keyboard {
-    height: 440px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    align-items: flex-start;
-}
-.buttonarea button {
-    color: #696565;
-    background:#ffffff;
+.buttonarea>button {
     border: 2px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, .1);
     outline: 5px solid #5f575500;
     text-align: center;
-    height: auto;
-    height: 100%;
     min-height: 70px;
     font-size: 25px;
     font-family: 'Arial';
     transition: .2s ease;
 }
-  .buttonarea button:hover {
-    cursor: pointer;
-    color: #696565;
-    background: #ffffff;
-    outline: 2px solid #5f575526;
-    border: 2px solid #5f575531;
+.buttonarea>button:hover {
+  cursor: pointer;
+  outline: 2px solid #5f575526;
+  border: 2px solid #5f575531;
 }
-  .buttonarea button:focus {
-    color: #696565;
-    background: #ffffff;
-    outline: 2px solid #5f575526;
-    border: 2px solid #5f575531;
+.buttonarea>button:focus {
+  outline: 2px solid #5f575526;
+  border: 2px solid #5f575531;
 }
 @media(max-width: 450px) {
   .buttonarea {
@@ -134,59 +96,44 @@
     grid-row-gap: 0px;
 }
   .calc {
+    display: grid;
     grid-template-rows: .5fr 1fr;
-    height: 100%;
+    height: inherit;
     padding: 0px;
-  }
-  .main-contenier {
-    height: 100%;
-    min-height: 480px;
-    width: 100%;
   }
   .buttonarea{
     margin-top: 0px;
   }
-  .buttonarea button {
+  .buttonarea>button {
     border: 1px solid #5f57551c;
     box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
     outline: 0px solid #5f575500;
     min-height: 50px;
     font-size: 35px;
   }
-  .buttonarea button:hover {
-    color: #696565;
-    background: #ebebeb5e;
+  .buttonarea>button:hover {
     border: 1px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
     outline: 0px solid #5f575500;
-    border: 1px solid #5f575531;
+    background: #ebebeb5e;
 }
-  .buttonarea button:focus {
-    color: #696565;
-    background: #ebebeb5e;
+  .buttonarea>button:focus {
     border: 1px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
     outline: 0px solid #5f575500;
-    border: 1px solid #5f575531;
+    background: #ebebeb5e;
 }
   .calc__output {
     height: auto;
+    box-shadow: none;
     border: 1px solid #5f57551c;
-    box-shadow: 0px 0px 0px rgba(0, 0, 0, .1);
-    border: 1px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
     outline: 0px solid #5f575500;
-    text-align: start;
     font-size: 55px;
   }
-    .calc__output:hover {
-    color: #696565;
-    background: #ffffff;
-    border: 1px solid #5f57551c;
-    box-shadow: 0px 3px 13px rgba(0, 0, 0, 0);
-    outline: 0px solid #5f575500;
-    border: 1px solid #5f575531;
-}
+  .calc__output:hover {
+    border: 1px solid #5f57553b;
+  }
+  .calc__output:focus {
+    border: 1px solid #5f57553b;
+  }
 }
 @media(min-height: 850px) and (max-width: 450px) {
   .calc {
@@ -211,7 +158,7 @@
   .calc__output {
     font-size: 40px;
   }
-  .buttonarea button {
+  .buttonarea>button {
     font-size: 30px;
   }
 }
